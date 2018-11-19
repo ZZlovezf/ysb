@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="box">
+		{{name}}
+		<div :title="two">fasdfas</div>
+		<input type="checkbox" :checked="flag"/>
+		<input type="checkbox" :checked="flag"/>
+		<input type="checkbox" :checked="flag"/>
+		<input type="checkbox" :checked="flag"/>
+		<input type="checkbox" :checked="flag"/>
+		<input type="checkbox" v-model="flag"/>
+		<input type="text" maxlength="20"  v-model="two"/>还可以输入{{20-two.length}}个字
+		<input type="number" v-model="width" />
+		<input type="number" v-model="height" />
+		<input type="range" min="0" max="255" v-model="r" />
+		<input type="range" min="0" max="255" v-model="g" />
+		<input type="range" min="0" max="255" v-model="b" />
+		<input type="range" min="0" max="1" v-model="a" step="0.1"/>
+			<div class="a" :style="{width:width+'px',height:height+'px',background:'rgba('+r+','+g+','+b+','+a+')'}">
+			</div>
+		<input type="color" v-model="bg"/>
+			<div class="b" :style="{width:width+'px',height:height+'px',background:bg}">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	var vw=new Vue({
+		el:"#box",
+		data:{
+			name:"hello",
+			two:"world",
+			flag:true,
+			width:200,
+			height:200,
+			r:0,
+			g:0,
+			b:0,
+			a:0.7,
+			bg:"#cccccc"
+		}
+	})
+</script>
